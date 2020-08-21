@@ -1,11 +1,8 @@
 <?php
 
-
 namespace Sfneal\Helpers\Time;
 
-
 use Sfneal\Actions\AbstractService;
-
 
 class TimeConverterService extends AbstractService
 {
@@ -25,78 +22,88 @@ class TimeConverterService extends AbstractService
     private $seconds;
 
     /**
-     * Retrieve number of hours as a float
+     * Retrieve number of hours as a float.
      *
      * @return float
      */
-    public function hours(): float {
+    public function hours(): float
+    {
         return $this->hours ?? 0;
     }
 
     /**
-     * Retrieve number of minutes as a float
+     * Retrieve number of minutes as a float.
      *
      * @return float
      */
-    public function minutes(): float {
+    public function minutes(): float
+    {
         return $this->minutes ?? 0;
     }
 
     /**
-     * Retrieve number of seconds as a float
+     * Retrieve number of seconds as a float.
      *
      * @return float
      */
-    public function seconds(): float {
+    public function seconds(): float
+    {
         return $this->seconds ?? 0;
     }
 
     /**
-     * Set the number of hours
+     * Set the number of hours.
      *
      * @param float $hours
      * @return $this
      */
-    public function setHours(float $hours): self {
+    public function setHours(float $hours): self
+    {
         $this->hours = $hours;
         $this->minutes = $hours * 60;
         $this->seconds = null;
+
         return $this;
     }
 
     /**
-     * Set the number of minutes
+     * Set the number of minutes.
      *
      * @param float $minutes
      * @return $this
      */
-    public function setMinutes(float $minutes): self {
+    public function setMinutes(float $minutes): self
+    {
         $this->hours = $minutes / 60;
         $this->minutes = $minutes;
         $this->seconds = null;
+
         return $this;
     }
 
     /**
-     * Set the number of seconds
+     * Set the number of seconds.
      *
      * @param float $seconds
      * @return $this
      */
-    public function setSeconds(float $seconds): self {
+    public function setSeconds(float $seconds): self
+    {
         $this->hours = $seconds / 3600;
         $this->minutes = $seconds / 60;
         $this->seconds = $seconds;
+
         return $this;
     }
 
     /**
-     * Retrieve time converted to hours string
+     * Retrieve time converted to hours string.
      *
      * @param bool $include_seconds
      * @return string
      */
-    public function getHours(bool $include_seconds = true): string {
+    public function getHours(bool $include_seconds = true): string
+    {
         // Calculate remaining minutes
         $minutes = $this->minutes % 60;
 
@@ -113,7 +120,7 @@ class TimeConverterService extends AbstractService
     }
 
     /**
-     * Join arrays of times to create datetime like strings
+     * Join arrays of times to create datetime like strings.
      *
      *  - prepend '0' to single digit integers
      *  - separate time values with ':' chars
@@ -121,30 +128,33 @@ class TimeConverterService extends AbstractService
      * @param array $times
      * @return string
      */
-    private static function transform(...$times): string {
+    private static function transform(...$times): string
+    {
         // Floor times & prepend "0" to single digit (< 10)
-        return join(':', array_map(function(float $time) {
+        return join(':', array_map(function (float $time) {
             return self::zeroFill(floor($time));
         }, $times));
     }
 
     /**
-     * Prepend a "0" to a single digit integer
+     * Prepend a "0" to a single digit integer.
      *
      * @param int $int
      * @return string
      */
-    private static function zeroFill(int $int): string {
-        return (self::isSingleDigitInt($int) ? '0' : '') . $int;
+    private static function zeroFill(int $int): string
+    {
+        return (self::isSingleDigitInt($int) ? '0' : '').$int;
     }
 
     /**
-     * Determine if an integer is a single digit (< 10)
+     * Determine if an integer is a single digit (< 10).
      *
      * @param int $int
      * @return bool
      */
-    private static function isSingleDigitInt(int $int): bool {
+    private static function isSingleDigitInt(int $int): bool
+    {
         return strlen((string) $int) == 1;
     }
 }
