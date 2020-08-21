@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sfneal\Helpers\Time;
-
 
 use Carbon\Carbon;
 use Spatie\Analytics\Exceptions\InvalidPeriod;
@@ -33,7 +31,7 @@ class PeriodService extends Period
     }
 
     /**
-     * Retrieve the Period's length in DateInterval
+     * Retrieve the Period's length in DateInterval.
      *
      * @return int
      */
@@ -43,7 +41,7 @@ class PeriodService extends Period
     }
 
     /**
-     * Offset the Period by its length in days
+     * Offset the Period by its length in days.
      *
      * @return PeriodService
      */
