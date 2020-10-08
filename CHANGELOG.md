@@ -12,3 +12,7 @@ All notable changes to `time-helpers` will be documented in this file
 
 ## 0.3.0 - 2020-10-06
 - add support for php 7.0-7.1
+
+
+## 0.4.0 - 2020-10-08
+- fix sfneal/actions min version requirement
