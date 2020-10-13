@@ -90,8 +90,6 @@ class TimePeriods extends AbstractService
         );
     }
 
-
-
     /**
      * Names of helper methods that don't return time periods.
      */
