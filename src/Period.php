@@ -4,9 +4,9 @@ namespace Sfneal\Helpers\Time;
 
 use Carbon\Carbon;
 use Spatie\Analytics\Exceptions\InvalidPeriod;
-use Spatie\Analytics\Period;
+use Spatie\Analytics\Period as SpatiePeriod;
 
-class PeriodService extends Period
+class Period extends SpatiePeriod
 {
     /**
      * @var Carbon
@@ -43,9 +43,9 @@ class PeriodService extends Period
     /**
      * Offset the Period by its length in days.
      *
-     * @return PeriodService
+     * @return Period
      */
-    public function offsetPeriod(): PeriodService
+    public function offsetPeriod(): Period
     {
         // Get the Period's length (in days)
         $length = $this->length();

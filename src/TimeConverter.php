@@ -4,7 +4,7 @@ namespace Sfneal\Helpers\Time;
 
 use Sfneal\Actions\AbstractService;
 
-class TimeConverterService extends AbstractService
+class TimeConverter extends AbstractService
 {
     /**
      * @var float Number of hours
