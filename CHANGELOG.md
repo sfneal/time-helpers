@@ -30,3 +30,7 @@ All notable changes to `time-helpers` will be documented in this file
 - add PeriodTest to test suite (from Spatie\Analytics\Tests\PeriodTest)
 - refactor Sfneal\Helpers\Time\TimeConverterService to Sfneal\Helpers\Time\TimeConverter
 - refactor Sfneal\Helpers\Time\PeriodService to Sfneal\Helpers\Time\Period
+
+
+## 0.7.0 - 2020-10-13
+- add Duration trait to be used with Eloquent Models for accessing 'duration' attributes
