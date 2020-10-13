@@ -24,3 +24,9 @@ All notable changes to `time-helpers` will be documented in this file
 
 ## 0.5.0 - 2020-10-13
 - add TimePeriods class for retrieving time period strings
+
+
+## 0.6.0 - 2020-10-13
+- add PeriodTest to test suite (from Spatie\Analytics\Tests\PeriodTest)
+- refactor Sfneal\Helpers\Time\TimeConverterService to Sfneal\Helpers\Time\TimeConverter
+- refactor Sfneal\Helpers\Time\PeriodService to Sfneal\Helpers\Time\Period
