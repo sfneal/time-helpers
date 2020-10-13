@@ -7,56 +7,6 @@ use Sfneal\Actions\AbstractService;
 class TimePeriods extends AbstractService
 {
     /**
-     * Names of helper methods that don't return time periods.
-     */
-    const HELPER_METHODS = ['all', 'get', 'getPeriod', 'mapMethods'];
-
-    /**
-     * Retrieve an array time period names and time period ranges.
-     *
-     * @param array $exclusions
-     * @return array
-     */
-    public static function all(array $exclusions = [])
-    {
-        // Get all of the methods in this class except 'all' & 'getPeriod'
-        $methods = array_filter(get_class_methods(new self()), function ($method) use ($exclusions) {
-            return ! in_array($method, array_unique(array_merge(self::HELPER_METHODS, $exclusions)));
-        });
-
-        // Method name key, with method results values
-        return self::mapMethods($methods);
-    }
-
-    /**
-     * Retrieve an array time period names and time period ranges.
-     *
-     * @param array $inclusions
-     * @return array
-     */
-    public static function get(...$inclusions)
-    {
-        // Get all of the methods in this class except 'all' & 'getPeriod'
-        $methods = array_filter(get_class_methods(new self()), function ($method) use ($inclusions) {
-            return in_array($method, $inclusions);
-        });
-
-        // Method name key, with method results values
-        return self::mapMethods($methods);
-    }
-
-    /**
-     * Retrieve a single period range.
-     *
-     * @param $period
-     * @return mixed
-     */
-    public static function timePeriod($period)
-    {
-        return self::{$period}();
-    }
-
-    /**
      * This Month.
      *
      * @param $format string Date format
@@ -138,6 +88,56 @@ class TimePeriods extends AbstractService
             date($format, strtotime('Tomorrow')).' 00:00:00',
             date($format, strtotime('Tomorrow')).' 23:59:59'
         );
+    }
+
+    /**
+     * Names of helper methods that don't return time periods.
+     */
+    const HELPER_METHODS = ['all', 'get', 'getPeriod', 'mapMethods'];
+
+    /**
+     * Retrieve an array time period names and time period ranges.
+     *
+     * @param array $exclusions
+     * @return array
+     */
+    public static function all(array $exclusions = [])
+    {
+        // Get all of the methods in this class except 'all' & 'getPeriod'
+        $methods = array_filter(get_class_methods(new self()), function ($method) use ($exclusions) {
+            return ! in_array($method, array_unique(array_merge(self::HELPER_METHODS, $exclusions)));
+        });
+
+        // Method name key, with method results values
+        return self::mapMethods($methods);
+    }
+
+    /**
+     * Retrieve an array time period names and time period ranges.
+     *
+     * @param array $inclusions
+     * @return array
+     */
+    public static function get(...$inclusions)
+    {
+        // Get all of the methods in this class except 'all' & 'getPeriod'
+        $methods = array_filter(get_class_methods(new self()), function ($method) use ($inclusions) {
+            return in_array($method, $inclusions);
+        });
+
+        // Method name key, with method results values
+        return self::mapMethods($methods);
+    }
+
+    /**
+     * Retrieve a single period range.
+     *
+     * @param $period
+     * @return mixed
+     */
+    public static function timePeriod($period)
+    {
+        return self::{$period}();
     }
 
     /**
