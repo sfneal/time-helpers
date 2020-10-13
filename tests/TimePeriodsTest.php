@@ -8,7 +8,7 @@ use Sfneal\Helpers\Time\TimePeriods;
 class TimePeriodsTest extends TestCase
 {
     /** @test */
-    public function timeThisMonth()
+    public function thisMonth()
     {
         list($start, $end) = TimePeriods::thisMonth();
 
@@ -20,7 +20,7 @@ class TimePeriodsTest extends TestCase
     }
 
     /** @test */
-    public function timeLastMonth()
+    public function lastMonth()
     {
         list($start, $end) = TimePeriods::lastMonth();
 
@@ -32,7 +32,7 @@ class TimePeriodsTest extends TestCase
     }
 
     /** @test */
-    public function timeThisWeek()
+    public function thisWeek()
     {
         list($start, $end) = TimePeriods::thisWeek();
 
