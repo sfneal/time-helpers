@@ -66,7 +66,7 @@ class TimePeriods extends AbstractService
     {
         return self::getPeriod(
             date($format, strtotime('first day of this month')).' 00:00:00',
-            date($format, strtotime('last day of this month')).' 23:59:59',
+            date($format, strtotime('last day of this month')).' 23:59:59'
         );
     }
 
@@ -80,7 +80,7 @@ class TimePeriods extends AbstractService
     {
         return self::getPeriod(
             date($format, strtotime('first day of last month')).' 00:00:00',
-            date($format, strtotime('last day of last month')).' 23:59:59',
+            date($format, strtotime('last day of last month')).' 23:59:59'
         );
     }
 
@@ -94,7 +94,7 @@ class TimePeriods extends AbstractService
     {
         return self::getPeriod(
             date($format, strtotime('Monday this week')).' 00:00:00',
-            date($format, strtotime('Sunday this week')).' 23:59:59',
+            date($format, strtotime('Sunday this week')).' 23:59:59'
         );
     }
 
@@ -108,7 +108,7 @@ class TimePeriods extends AbstractService
     {
         return self::getPeriod(
             date($format, strtotime('Today')).' 00:00:00',
-            date($format, strtotime('Today')).' 23:59:59',
+            date($format, strtotime('Today')).' 23:59:59'
         );
     }
 
@@ -122,7 +122,7 @@ class TimePeriods extends AbstractService
     {
         return self::getPeriod(
             date($format, strtotime('Yesterday')).' 00:00:00',
-            date($format, strtotime('Yesterday')).' 23:59:59',
+            date($format, strtotime('Yesterday')).' 23:59:59'
         );
     }
 
@@ -136,7 +136,7 @@ class TimePeriods extends AbstractService
     {
         return self::getPeriod(
             date($format, strtotime('Tomorrow')).' 00:00:00',
-            date($format, strtotime('Tomorrow')).' 23:59:59',
+            date($format, strtotime('Tomorrow')).' 23:59:59'
         );
     }
 
