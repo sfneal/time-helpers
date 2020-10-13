@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Sfneal\Helpers\Time\Traits;
 
 use Sfneal\Helpers\Time\TimeConverter;
