@@ -1,5 +1,6 @@
 os: linux
-virt: lxd
+dist: focal
+virt: vm
 
 language: php
 
