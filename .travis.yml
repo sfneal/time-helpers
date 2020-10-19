@@ -1,8 +1,8 @@
 os: linux
-#dist: focal
-#group: edge
+dist: focal
+group: edge
 arch: arm64-graviton2
-#compiler: clang
+compiler: clang
 
 language: php
 
