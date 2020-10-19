@@ -1,8 +1,6 @@
-os: linux
-dist: focal
-virt: vm
-
 language: php
+os: linux
+arch: arm64-graviton2
 
 env:
     matrix:
