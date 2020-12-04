@@ -34,3 +34,8 @@ All notable changes to `time-helpers` will be documented in this file
 
 ## 0.7.0 - 2020-10-13
 - add Duration trait to be used with Eloquent Models for accessing 'duration' attributes
+
+
+## 0.7.1 - 2020-12-04
+- cut support for php7.1 & 7.0
+- optimize Travis CI tests
