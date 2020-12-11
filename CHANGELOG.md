@@ -39,3 +39,7 @@ All notable changes to `time-helpers` will be documented in this file
 ## 0.7.1 - 2020-12-04
 - cut support for php7.1 & 7.0
 - optimize Travis CI tests
+
+
+## 0.8.0 - 2020-12-11
+- add support for php8
