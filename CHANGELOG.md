@@ -43,3 +43,7 @@ All notable changes to `time-helpers` will be documented in this file
 
 ## 0.8.0 - 2020-12-11
 - add support for php8
+
+
+## 0.8.1 - 2020-12-23
+- add improved type hinting
