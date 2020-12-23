@@ -43,9 +43,9 @@ class Period extends SpatiePeriod
     /**
      * Offset the Period by its length in days.
      *
-     * @return Period
+     * @return SpatiePeriod
      */
-    public function offsetPeriod(): Period
+    public function offsetPeriod(): SpatiePeriod
     {
         // Get the Period's length (in days)
         $length = $this->length();
