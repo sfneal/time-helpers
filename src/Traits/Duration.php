@@ -17,14 +17,14 @@ trait Duration
      *
      * @return float
      */
-    abstract public function getTotalDurationAttribute();
+    abstract public function getTotalDurationAttribute(): float;
 
     /**
      * Retrieve total duration converted to hours.
      *
      * @return string
      */
-    public function getTotalHoursAttribute()
+    public function getTotalHoursAttribute(): string
     {
         return (new TimeConverter())->setMinutes($this->total_duration)->getHours();
     }
@@ -54,7 +54,7 @@ trait Duration
      *
      * @return string
      */
-    public function getTotalTimeAttribute()
+    public function getTotalTimeAttribute(): string
     {
         return (new TimeConverter())->setSeconds($this->total_seconds)->getHours();
     }
