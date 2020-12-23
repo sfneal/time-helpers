@@ -12,7 +12,7 @@ class TimePeriods extends AbstractService
      * @param $format string Date format
      * @return array
      */
-    public static function thisMonth(string $format = 'Y-m-d')
+    public static function thisMonth(string $format = 'Y-m-d'): array
     {
         return self::getPeriod(
             date($format, strtotime('first day of this month')).' 00:00:00',
@@ -26,7 +26,7 @@ class TimePeriods extends AbstractService
      * @param $format string Date format
      * @return array
      */
-    public static function lastMonth(string $format = 'Y-m-d')
+    public static function lastMonth(string $format = 'Y-m-d'): array
     {
         return self::getPeriod(
             date($format, strtotime('first day of last month')).' 00:00:00',
@@ -40,7 +40,7 @@ class TimePeriods extends AbstractService
      * @param $format string Date format
      * @return array
      */
-    public static function thisWeek(string $format = 'Y-m-d')
+    public static function thisWeek(string $format = 'Y-m-d'): array
     {
         return self::getPeriod(
             date($format, strtotime('Monday this week')).' 00:00:00',
@@ -54,7 +54,7 @@ class TimePeriods extends AbstractService
      * @param $format string Date format
      * @return array
      */
-    public static function today(string $format = 'Y-m-d')
+    public static function today(string $format = 'Y-m-d'): array
     {
         return self::getPeriod(
             date($format, strtotime('Today')).' 00:00:00',
@@ -68,7 +68,7 @@ class TimePeriods extends AbstractService
      * @param $format string Date format
      * @return array
      */
-    public static function yesterday(string $format = 'Y-m-d')
+    public static function yesterday(string $format = 'Y-m-d'): array
     {
         return self::getPeriod(
             date($format, strtotime('Yesterday')).' 00:00:00',
@@ -82,7 +82,7 @@ class TimePeriods extends AbstractService
      * @param $format string Date format
      * @return array
      */
-    public static function tomorrow(string $format = 'Y-m-d')
+    public static function tomorrow(string $format = 'Y-m-d'): array
     {
         return self::getPeriod(
             date($format, strtotime('Tomorrow')).' 00:00:00',
@@ -101,7 +101,7 @@ class TimePeriods extends AbstractService
      * @param array $exclusions
      * @return array
      */
-    public static function all(array $exclusions = [])
+    public static function all(array $exclusions = []): array
     {
         // Get all of the methods in this class except 'all' & 'getPeriod'
         $methods = array_filter(get_class_methods(new self()), function ($method) use ($exclusions) {
@@ -118,7 +118,7 @@ class TimePeriods extends AbstractService
      * @param array $inclusions
      * @return array
      */
-    public static function get(...$inclusions)
+    public static function get(...$inclusions): array
     {
         // Get all of the methods in this class except 'all' & 'getPeriod'
         $methods = array_filter(get_class_methods(new self()), function ($method) use ($inclusions) {
@@ -158,7 +158,7 @@ class TimePeriods extends AbstractService
      * @param array $methods
      * @return array
      */
-    private static function mapMethods(array $methods)
+    private static function mapMethods(array $methods): array
     {
         return arrayFlattenKeys(array_map(function ($method, $times) {
             return [$method => $times];
