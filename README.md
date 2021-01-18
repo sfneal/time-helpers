@@ -1,7 +1,8 @@
 # Time Helpers
 
+[![Packagist PHP support](https://img.shields.io/packagist/php-v/sfneal/time-helpers)](https://packagist.org/packages/sfneal/time-helpers)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sfneal/time-helpers.svg?style=flat-square)](https://packagist.org/packages/sfneal/time-helpers)
-[![Build Status](https://img.shields.io/travis/sfneal/time-helpers/master.svg?style=flat-square)](https://travis-ci.org/sfneal/time-helpers)
+[![Build Status](https://travis-ci.com/sfneal/time-helpers.svg?branch=master&style=flat-square)](https://travis-ci.com/sfneal/time-helpers)
 [![Quality Score](https://img.shields.io/scrutinizer/g/sfneal/time-helpers.svg?style=flat-square)](https://scrutinizer-ci.com/g/sfneal/time-helpers)
 [![Total Downloads](https://img.shields.io/packagist/dt/sfneal/time-helpers.svg?style=flat-square)](https://packagist.org/packages/sfneal/time-helpers)
 
