@@ -52,3 +52,7 @@ All notable changes to `time-helpers` will be documented in this file
 ## 0.9.0 - 2021-01-21
 - add badges to README
 - bump sfneal/actions & sfneal/array-helpers min versions to 1.0.0
+
+
+## 0.9.1 - 2021-01-21
+- fix Travis CI config to not include hhvm PHP version
