@@ -47,3 +47,8 @@ All notable changes to `time-helpers` will be documented in this file
 
 ## 0.8.1 - 2020-12-23
 - add improved type hinting
+
+
+## 0.9.0 - 2021-01-21
+- add badges to README
+- bump sfneal/actions & sfneal/array-helpers min versions to 1.0.0
