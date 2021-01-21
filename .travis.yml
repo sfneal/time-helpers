@@ -11,8 +11,7 @@ env:
 
 jobs:
     allow_failures:
-        -   php: hhvm
-        -   php: nightly
+        - php: nightly
 
 php:
     - hhvm
