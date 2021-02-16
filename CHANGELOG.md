@@ -63,3 +63,7 @@ All notable changes to `time-helpers` will be documented in this file
 - fix issue with TimeConverter::setMinutes() method not setting a $seconds property value
 - add TimeConvertTest to test suite for testing TimeConverter functionality
 - bump phpunit min dev requirement to 8.0 to support use of assertIs{Type} methods
+
+
+## 0.10.1 - 2021-02-16
+- add years, months, yearsAgo, yearsHence, monthsAgo & monthsHence methods to Carbonate with tests
