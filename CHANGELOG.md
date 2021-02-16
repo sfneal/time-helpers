@@ -56,3 +56,9 @@ All notable changes to `time-helpers` will be documented in this file
 
 ## 0.9.1 - 2021-01-21
 - fix Travis CI config to not include hhvm PHP version
+
+
+## 0.10.0 - 2021-02-16
+- make Carbonate service for adding & subtracting days from a todays Carbon datetime
+- fix issue with TimeConverter::setMinutes() method not setting a $seconds property value
+- add TimeConvertTest to test suite for testing TimeConverter functionality
