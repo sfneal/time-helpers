@@ -42,7 +42,7 @@ class CarbonateTest extends TestCase
     }
 
     /** @test */
-    public function it_can_subtract_days()
+    public function daysAgo()
     {
         $daysAgo = rand(0, $this->day);
         $expected = Carbon::create($this->year, $this->month, $this->day - $daysAgo);
@@ -53,11 +53,121 @@ class CarbonateTest extends TestCase
     }
 
     /** @test */
-    public function it_can_add_days()
+    public function daysHence()
     {
         $daysAgo = rand(0, 30);
         $expected = Carbon::create($this->year, $this->month, $this->day + $daysAgo);
         $output = Carbonate::daysHence($daysAgo);
+
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function days_positive()
+    {
+        $daysAgo = rand(0, 30);
+        $expected = Carbon::create($this->year, $this->month, $this->day + $daysAgo);
+        $output = Carbonate::days($daysAgo);
+
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function days_negative()
+    {
+        $daysAgo = rand(1, $this->day);
+        $expected = Carbon::create($this->year, $this->month, $this->day - $daysAgo);
+        $output = Carbonate::days(-$daysAgo);
+
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function yearsAgo()
+    {
+        $yearsAgo = rand(0, $this->year);
+        $expected = Carbon::create($this->year - $yearsAgo, $this->month, $this->day);
+        $output = Carbonate::yearsAgo($yearsAgo);
+
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function yearsHence()
+    {
+        $yearsAgo = rand(0, 30);
+        $expected = Carbon::create($this->year + $yearsAgo, $this->month, $this->day);
+        $output = Carbonate::yearsHence($yearsAgo);
+
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function years_positive()
+    {
+        $yearsAgo = rand(0, 30);
+        $expected = Carbon::create($this->year + $yearsAgo, $this->month, $this->day);
+        $output = Carbonate::years($yearsAgo);
+
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function years_negative()
+    {
+        $yearsAgo = rand(1, $this->year);
+        $expected = Carbon::create($this->year - $yearsAgo, $this->month, $this->day);
+        $output = Carbonate::years(-$yearsAgo);
+
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function monthsAgo()
+    {
+        $monthsAgo = rand(0, $this->month);
+        $expected = Carbon::create($this->year, $this->month - $monthsAgo, $this->day);
+        $output = Carbonate::monthsAgo($monthsAgo);
+
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function monthsHence()
+    {
+        $monthsAgo = rand(0, 30);
+        $expected = Carbon::create($this->year, $this->month + $monthsAgo, $this->day);
+        $output = Carbonate::monthsHence($monthsAgo);
+
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function months_positive()
+    {
+        $monthsAgo = rand(0, 30);
+        $expected = Carbon::create($this->year, $this->month + $monthsAgo, $this->day);
+        $output = Carbonate::months($monthsAgo);
+
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function months_negative()
+    {
+        $monthsAgo = rand(1, $this->month);
+        $expected = Carbon::create($this->year, $this->month - $monthsAgo, $this->day);
+        $output = Carbonate::months(-$monthsAgo);
 
         $this->assertInstanceOf(Carbon::class, $output);
         $this->assertEquals($expected, $output);
