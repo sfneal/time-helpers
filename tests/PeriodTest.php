@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 use Sfneal\Helpers\Time\Period;
 use Spatie\Analytics\Exceptions\InvalidPeriod;
 
-class PeriodServiceTest extends TestCase
+class PeriodTest extends TestCase
 {
     /** @test */
     public function it_can_create_a_period_for_a_given_amount_of_days()
