@@ -39,7 +39,6 @@ class CarbonateTest extends TestCase
 
         // Change current date for testing purposes
         Carbon::setTestNow(Carbon::create($this->year, $this->month, $this->day));
-
     }
 
     /** @test */
