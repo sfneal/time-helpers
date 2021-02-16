@@ -44,4 +44,40 @@ class Carbonate extends AbstractService
     {
         return Carbon::now()->addDays($daysFromNow);
     }
+
+    /**
+     * Create a Carbon datetime objects $x years forward/backward in the past or future
+     *
+     *  - a positive(+) integer $years value correlates to days FORWARD
+     *  - a negative(-) integer $years value correlates to days BACKWARD
+     *
+     * @param int $years
+     * @return Carbon
+     */
+    public static function years(int $years): Carbon
+    {
+        return ($years < 0) ? self::yearsAgo(abs($years)) : self::yearsHence($years);
+    }
+
+    /**
+     * Create a Carbon datetime object representing $x days ago.
+     *
+     * @param int $yearsAgo
+     * @return Carbon
+     */
+    public static function yearsAgo(int $yearsAgo): Carbon
+    {
+        return Carbon::now()->subYears($yearsAgo);
+    }
+
+    /**
+     * Create a Carbon datetime object representing $x days from now.
+     *
+     * @param int $yearsFromNow
+     * @return Carbon
+     */
+    public static function yearsHence(int $yearsFromNow): Carbon
+    {
+        return Carbon::now()->addYears($yearsFromNow);
+    }
 }
