@@ -26,23 +26,23 @@ class Carbonate extends AbstractService
     /**
      * Create a Carbon datetime object representing $x days ago.
      *
-     * @param int $daysAgo
+     * @param int $days
      * @return Carbon
      */
-    public static function daysAgo(int $daysAgo): Carbon
+    public static function daysAgo(int $days): Carbon
     {
-        return Carbon::now()->subDays($daysAgo);
+        return Carbon::now()->subDays($days);
     }
 
     /**
      * Create a Carbon datetime object representing $x days from now.
      *
-     * @param int $daysFromNow
+     * @param int $days
      * @return Carbon
      */
-    public static function daysHence(int $daysFromNow): Carbon
+    public static function daysHence(int $days): Carbon
     {
-        return Carbon::now()->addDays($daysFromNow);
+        return Carbon::now()->addDays($days);
     }
 
     /**
@@ -62,23 +62,23 @@ class Carbonate extends AbstractService
     /**
      * Create a Carbon datetime object representing $x days ago.
      *
-     * @param int $yearsAgo
+     * @param int $years
      * @return Carbon
      */
-    public static function yearsAgo(int $yearsAgo): Carbon
+    public static function yearsAgo(int $years): Carbon
     {
-        return Carbon::now()->subYears($yearsAgo);
+        return Carbon::now()->subYears($years);
     }
 
     /**
      * Create a Carbon datetime object representing $x days from now.
      *
-     * @param int $yearsFromNow
+     * @param int $years
      * @return Carbon
      */
-    public static function yearsHence(int $yearsFromNow): Carbon
+    public static function yearsHence(int $years): Carbon
     {
-        return Carbon::now()->addYears($yearsFromNow);
+        return Carbon::now()->addYears($years);
     }
 
     /**
