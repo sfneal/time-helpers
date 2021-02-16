@@ -62,4 +62,26 @@ class CarbonateTest extends TestCase
         $this->assertInstanceOf(Carbon::class, $output);
         $this->assertEquals($expected, $output);
     }
+
+    /** @test */
+    public function days_positive()
+    {
+        $daysAgo = rand(0, 30);
+        $expected = Carbon::create($this->year, $this->month, $this->day + $daysAgo);
+        $output = Carbonate::days($daysAgo);
+
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
+
+    /** @test */
+    public function days_negative()
+    {
+        $daysAgo = rand(1, $this->day);
+        $expected = Carbon::create($this->year, $this->month, $this->day - $daysAgo);
+        $output = Carbonate::days(-$daysAgo);
+
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
 }

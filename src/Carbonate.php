@@ -8,7 +8,20 @@ use Sfneal\Actions\AbstractService;
 class Carbonate extends AbstractService
 {
     // todo: add year, month & week methods
-    // todo: add methods that accept positives or negative ints to determine sub or add
+
+    /**
+     * Create a Carbon datetime objects $x days forward/backward in the past or future
+     *
+     *  - a positive(+) integer $days value correlates to days FORWARD
+     *  - a negative(-) integer $days value correlates to days BACKWARD
+     *
+     * @param int $days
+     * @return Carbon
+     */
+    public static function days(int $days): Carbon
+    {
+        return ($days < 0) ? self::daysAgo(abs($days)) : self::daysHence($days);
+    }
 
     /**
      * Create a Carbon datetime object representing $x days ago.
