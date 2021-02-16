@@ -42,7 +42,7 @@ class CarbonateTest extends TestCase
     }
 
     /** @test */
-    public function it_can_subtract_days()
+    public function daysAgo()
     {
         $daysAgo = rand(0, $this->day);
         $expected = Carbon::create($this->year, $this->month, $this->day - $daysAgo);
@@ -53,7 +53,7 @@ class CarbonateTest extends TestCase
     }
 
     /** @test */
-    public function it_can_add_days()
+    public function daysHence()
     {
         $daysAgo = rand(0, 30);
         $expected = Carbon::create($this->year, $this->month, $this->day + $daysAgo);
