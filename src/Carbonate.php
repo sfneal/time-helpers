@@ -7,8 +7,6 @@ use Sfneal\Actions\AbstractService;
 
 class Carbonate extends AbstractService
 {
-    // todo: add year, month & week methods
-
     /**
      * Create a Carbon datetime objects $x days forward/backward in the past or future
      *
