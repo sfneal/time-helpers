@@ -5,7 +5,6 @@ namespace Sfneal\Helpers\Time\Tests;
 use Carbon\Carbon;
 use PHPUnit\Framework\TestCase;
 use Sfneal\Helpers\Time\Carbonate;
-use Sfneal\Helpers\Time\Period;
 
 class CarbonateTest extends TestCase
 {
@@ -40,7 +39,6 @@ class CarbonateTest extends TestCase
 
         // Change current date for testing purposes
         Carbon::setTestNow(Carbon::create($this->year, $this->month, $this->day));
-
     }
 
     /** @test */
