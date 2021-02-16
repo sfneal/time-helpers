@@ -41,6 +41,19 @@ class CarbonateTest extends TestCase
         Carbon::setTestNow(Carbon::create($this->year, $this->month, $this->day));
     }
 
+    /**
+     * Perform the necessary assertions
+     *
+     * @param Carbon $expected
+     * @param Carbon $output
+     * @return void
+     */
+    private function performAssertions(Carbon $expected, Carbon $output): void
+    {
+        $this->assertInstanceOf(Carbon::class, $output);
+        $this->assertEquals($expected, $output);
+    }
+
     /** @test */
     public function daysAgo()
     {
@@ -48,8 +61,7 @@ class CarbonateTest extends TestCase
         $expected = Carbon::create($this->year, $this->month, $this->day - $daysAgo);
         $output = Carbonate::daysAgo($daysAgo);
 
-        $this->assertInstanceOf(Carbon::class, $output);
-        $this->assertEquals($expected, $output);
+        $this->performAssertions($expected, $output);
     }
 
     /** @test */
@@ -59,8 +71,7 @@ class CarbonateTest extends TestCase
         $expected = Carbon::create($this->year, $this->month, $this->day + $daysAgo);
         $output = Carbonate::daysHence($daysAgo);
 
-        $this->assertInstanceOf(Carbon::class, $output);
-        $this->assertEquals($expected, $output);
+        $this->performAssertions($expected, $output);
     }
 
     /** @test */
@@ -70,8 +81,7 @@ class CarbonateTest extends TestCase
         $expected = Carbon::create($this->year, $this->month, $this->day + $daysAgo);
         $output = Carbonate::days($daysAgo);
 
-        $this->assertInstanceOf(Carbon::class, $output);
-        $this->assertEquals($expected, $output);
+        $this->performAssertions($expected, $output);
     }
 
     /** @test */
@@ -81,8 +91,7 @@ class CarbonateTest extends TestCase
         $expected = Carbon::create($this->year, $this->month, $this->day - $daysAgo);
         $output = Carbonate::days(-$daysAgo);
 
-        $this->assertInstanceOf(Carbon::class, $output);
-        $this->assertEquals($expected, $output);
+        $this->performAssertions($expected, $output);
     }
 
     /** @test */
@@ -92,8 +101,7 @@ class CarbonateTest extends TestCase
         $expected = Carbon::create($this->year - $yearsAgo, $this->month, $this->day);
         $output = Carbonate::yearsAgo($yearsAgo);
 
-        $this->assertInstanceOf(Carbon::class, $output);
-        $this->assertEquals($expected, $output);
+        $this->performAssertions($expected, $output);
     }
 
     /** @test */
@@ -103,8 +111,7 @@ class CarbonateTest extends TestCase
         $expected = Carbon::create($this->year + $yearsAgo, $this->month, $this->day);
         $output = Carbonate::yearsHence($yearsAgo);
 
-        $this->assertInstanceOf(Carbon::class, $output);
-        $this->assertEquals($expected, $output);
+        $this->performAssertions($expected, $output);
     }
 
     /** @test */
@@ -114,8 +121,7 @@ class CarbonateTest extends TestCase
         $expected = Carbon::create($this->year + $yearsAgo, $this->month, $this->day);
         $output = Carbonate::years($yearsAgo);
 
-        $this->assertInstanceOf(Carbon::class, $output);
-        $this->assertEquals($expected, $output);
+        $this->performAssertions($expected, $output);
     }
 
     /** @test */
@@ -125,8 +131,7 @@ class CarbonateTest extends TestCase
         $expected = Carbon::create($this->year - $yearsAgo, $this->month, $this->day);
         $output = Carbonate::years(-$yearsAgo);
 
-        $this->assertInstanceOf(Carbon::class, $output);
-        $this->assertEquals($expected, $output);
+        $this->performAssertions($expected, $output);
     }
 
     /** @test */
@@ -136,8 +141,7 @@ class CarbonateTest extends TestCase
         $expected = Carbon::create($this->year, $this->month - $monthsAgo, $this->day);
         $output = Carbonate::monthsAgo($monthsAgo);
 
-        $this->assertInstanceOf(Carbon::class, $output);
-        $this->assertEquals($expected, $output);
+        $this->performAssertions($expected, $output);
     }
 
     /** @test */
@@ -147,8 +151,7 @@ class CarbonateTest extends TestCase
         $expected = Carbon::create($this->year, $this->month + $monthsAgo, $this->day);
         $output = Carbonate::monthsHence($monthsAgo);
 
-        $this->assertInstanceOf(Carbon::class, $output);
-        $this->assertEquals($expected, $output);
+        $this->performAssertions($expected, $output);
     }
 
     /** @test */
@@ -158,8 +161,7 @@ class CarbonateTest extends TestCase
         $expected = Carbon::create($this->year, $this->month + $monthsAgo, $this->day);
         $output = Carbonate::months($monthsAgo);
 
-        $this->assertInstanceOf(Carbon::class, $output);
-        $this->assertEquals($expected, $output);
+        $this->performAssertions($expected, $output);
     }
 
     /** @test */
@@ -169,7 +171,6 @@ class CarbonateTest extends TestCase
         $expected = Carbon::create($this->year, $this->month - $monthsAgo, $this->day);
         $output = Carbonate::months(-$monthsAgo);
 
-        $this->assertInstanceOf(Carbon::class, $output);
-        $this->assertEquals($expected, $output);
+        $this->performAssertions($expected, $output);
     }
 }
