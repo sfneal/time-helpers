@@ -76,7 +76,7 @@ class TimeConverter extends AbstractService
     {
         $this->hours = $minutes / 60;
         $this->minutes = $minutes;
-        $this->seconds = null;
+        $this->seconds = $minutes * 60;
 
         return $this;
     }
