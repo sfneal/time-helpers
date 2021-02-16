@@ -10,7 +10,7 @@ class Carbonate extends AbstractService
     // todo: add year, month & week methods
 
     /**
-     * Create a Carbon datetime objects $x days forward/backward in the past or future
+     * Create a Carbon datetime objects $x days forward/backward in the past or future.
      *
      *  - a positive(+) integer $days value correlates to days FORWARD
      *  - a negative(-) integer $days value correlates to days BACKWARD
@@ -24,7 +24,7 @@ class Carbonate extends AbstractService
     }
 
     /**
-     * Create a Carbon datetime objects $x months forward/backward in the past or future
+     * Create a Carbon datetime objects $x months forward/backward in the past or future.
      *
      *  - a positive(+) integer $months value correlates to days FORWARD
      *  - a negative(-) integer $months value correlates to days BACKWARD
@@ -36,8 +36,9 @@ class Carbonate extends AbstractService
     {
         return ($months < 0) ? self::monthsAgo(abs($months)) : self::monthsHence($months);
     }
+
     /**
-     * Create a Carbon datetime objects $x years forward/backward in the past or future
+     * Create a Carbon datetime objects $x years forward/backward in the past or future.
      *
      *  - a positive(+) integer $years value correlates to days FORWARD
      *  - a negative(-) integer $years value correlates to days BACKWARD
