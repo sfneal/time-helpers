@@ -24,6 +24,33 @@ class Carbonate extends AbstractService
     }
 
     /**
+     * Create a Carbon datetime objects $x months forward/backward in the past or future
+     *
+     *  - a positive(+) integer $months value correlates to days FORWARD
+     *  - a negative(-) integer $months value correlates to days BACKWARD
+     *
+     * @param int $months
+     * @return Carbon
+     */
+    public static function months(int $months): Carbon
+    {
+        return ($months < 0) ? self::monthsAgo(abs($months)) : self::monthsHence($months);
+    }
+    /**
+     * Create a Carbon datetime objects $x years forward/backward in the past or future
+     *
+     *  - a positive(+) integer $years value correlates to days FORWARD
+     *  - a negative(-) integer $years value correlates to days BACKWARD
+     *
+     * @param int $years
+     * @return Carbon
+     */
+    public static function years(int $years): Carbon
+    {
+        return ($years < 0) ? self::yearsAgo(abs($years)) : self::yearsHence($years);
+    }
+
+    /**
      * Create a Carbon datetime object representing $x days ago.
      *
      * @param int $days
@@ -46,17 +73,25 @@ class Carbonate extends AbstractService
     }
 
     /**
-     * Create a Carbon datetime objects $x years forward/backward in the past or future
+     * Create a Carbon datetime object representing $x months ago.
      *
-     *  - a positive(+) integer $years value correlates to days FORWARD
-     *  - a negative(-) integer $years value correlates to days BACKWARD
-     *
-     * @param int $years
+     * @param int $months
      * @return Carbon
      */
-    public static function years(int $years): Carbon
+    public static function monthsAgo(int $months): Carbon
     {
-        return ($years < 0) ? self::yearsAgo(abs($years)) : self::yearsHence($years);
+        return Carbon::now()->subMonths($months);
+    }
+
+    /**
+     * Create a Carbon datetime object representing $x months from now.
+     *
+     * @param int $months
+     * @return Carbon
+     */
+    public static function monthsHence(int $months): Carbon
+    {
+        return Carbon::now()->addMonths($months);
     }
 
     /**
@@ -79,41 +114,5 @@ class Carbonate extends AbstractService
     public static function yearsHence(int $years): Carbon
     {
         return Carbon::now()->addYears($years);
-    }
-
-    /**
-     * Create a Carbon datetime objects $x months forward/backward in the past or future
-     *
-     *  - a positive(+) integer $months value correlates to days FORWARD
-     *  - a negative(-) integer $months value correlates to days BACKWARD
-     *
-     * @param int $months
-     * @return Carbon
-     */
-    public static function months(int $months): Carbon
-    {
-        return ($months < 0) ? self::monthsAgo(abs($months)) : self::monthsHence($months);
-    }
-
-    /**
-     * Create a Carbon datetime object representing $x months ago.
-     *
-     * @param int $months
-     * @return Carbon
-     */
-    public static function monthsAgo(int $months): Carbon
-    {
-        return Carbon::now()->subMonths($months);
-    }
-
-    /**
-     * Create a Carbon datetime object representing $x months from now.
-     *
-     * @param int $months
-     * @return Carbon
-     */
-    public static function monthsHence(int $months): Carbon
-    {
-        return Carbon::now()->addMonths($months);
     }
 }
