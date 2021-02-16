@@ -28,127 +28,127 @@ class TimeConverterTest extends TestCase
     /** @test */
     public function hours_to_minutes()
     {
-        $expected = (new TimeConverter())->setHours($this->value)->minutes();
-        $output = $this->value * 60;
+        $output = (new TimeConverter())->setHours($this->value)->minutes();
+        $expected = $this->value * 60;
 
-        $this->assertIsFloat($expected);
-        $this->assertEquals($expected, $output);
+        $this->assertIsFloat($output);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
     public function hours_to_seconds()
     {
-        $expected = (new TimeConverter())->setHours($this->value)->seconds();
-        $output = $this->value * 3600;
+        $output = (new TimeConverter())->setHours($this->value)->seconds();
+        $expected = $this->value * 3600;
 
-        $this->assertIsFloat($expected);
-        $this->assertEquals($expected, $output);
+        $this->assertIsFloat($output);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
     public function minutes_to_hours()
     {
-        $expected = (new TimeConverter())->setMinutes($this->value)->hours();
-        $output = $this->value / 60;
+        $output = (new TimeConverter())->setMinutes($this->value)->hours();
+        $expected = $this->value / 60;
 
-        $this->assertIsFloat($expected);
-        $this->assertEquals($expected, $output);
+        $this->assertIsFloat($output);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
     public function minutes_to_seconds()
     {
-        $expected = (new TimeConverter())->setMinutes($this->value)->seconds();
-        $output = $this->value * 60;
+        $output = (new TimeConverter())->setMinutes($this->value)->seconds();
+        $expected = $this->value * 60;
 
-        $this->assertIsFloat($expected);
-        $this->assertEquals($expected, $output);
+        $this->assertIsFloat($output);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
     public function seconds_to_hours()
     {
-        $expected = (new TimeConverter())->setSeconds($this->value)->hours();
-        $output = $this->value / 3600;
+        $output = (new TimeConverter())->setSeconds($this->value)->hours();
+        $expected = $this->value / 3600;
 
-        $this->assertIsFloat($expected);
-        $this->assertEquals($expected, $output);
+        $this->assertIsFloat($output);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
     public function seconds_to_minutes()
     {
-        $expected = (new TimeConverter())->setSeconds($this->value)->minutes();
-        $output = $this->value / 60;
+        $output = (new TimeConverter())->setSeconds($this->value)->minutes();
+        $expected = $this->value / 60;
 
-        $this->assertIsFloat($expected);
-        $this->assertEquals($expected, $output);
+        $this->assertIsFloat($output);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
     public function hours_to_hours_string_with_seconds()
     {
-        $expected = (new TimeConverter())->setHours(7.19)->getHours();
-        $output = "07:11:24";
+        $output = (new TimeConverter())->setHours(7.19)->getHours();
+        $expected = "07:11:24";
 
-        $this->assertIsString($expected);
-        $this->assertStringContainsString(':', $expected);
-        $this->assertEquals($expected, $output);
+        $this->assertIsString($output);
+        $this->assertStringContainsString(':', $output);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
     public function minutes_to_hours_string_with_seconds()
     {
-        $expected = (new TimeConverter())->setMinutes(135.5)->getHours();
-        $output = "02:15:30";
+        $output = (new TimeConverter())->setMinutes(135.5)->getHours();
+        $expected = "02:15:30";
 
-        $this->assertIsString($expected);
-        $this->assertStringContainsString(':', $expected);
-        $this->assertEquals($expected, $output);
+        $this->assertIsString($output);
+        $this->assertStringContainsString(':', $output);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
     public function seconds_to_hours_string_with_seconds()
     {
-        $expected = (new TimeConverter())->setSeconds(11235)->getHours();
-        $output = "03:07:15";
+        $output = (new TimeConverter())->setSeconds(11235)->getHours();
+        $expected = "03:07:15";
 
-        $this->assertIsString($expected);
-        $this->assertStringContainsString(':', $expected);
-        $this->assertEquals($expected, $output);
+        $this->assertIsString($output);
+        $this->assertStringContainsString(':', $output);
+        $this->assertEquals($output, $expected);
     }
 
 
     /** @test */
     public function hours_to_hours_string_without_seconds()
     {
-        $expected = (new TimeConverter())->setHours(9.67)->getHours(false);
-        $output = "09:40";
+        $output = (new TimeConverter())->setHours(9.67)->getHours(false);
+        $expected = "09:40";
 
-        $this->assertIsString($expected);
-        $this->assertStringContainsString(':', $expected);
-        $this->assertEquals($expected, $output);
+        $this->assertIsString($output);
+        $this->assertStringContainsString(':', $output);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
     public function minutes_to_hours_string_without_seconds()
     {
-        $expected = (new TimeConverter())->setMinutes(147.12)->getHours(false);
-        $output = "02:27";
+        $output = (new TimeConverter())->setMinutes(147.12)->getHours(false);
+        $expected = "02:27";
 
-        $this->assertIsString($expected);
-        $this->assertStringContainsString(':', $expected);
-        $this->assertEquals($expected, $output);
+        $this->assertIsString($output);
+        $this->assertStringContainsString(':', $output);
+        $this->assertEquals($output, $expected);
     }
 
     /** @test */
     public function seconds_to_hours_string_without_seconds()
     {
-        $expected = (new TimeConverter())->setSeconds(54213)->getHours(false);
-        $output = "15:03";
+        $output = (new TimeConverter())->setSeconds(54213)->getHours(false);
+        $expected = "15:03";
 
-        $this->assertIsString($expected);
-        $this->assertStringContainsString(':', $expected);
-        $this->assertEquals($expected, $output);
+        $this->assertIsString($output);
+        $this->assertStringContainsString(':', $output);
+        $this->assertEquals($output, $expected);
     }
 }
