@@ -89,7 +89,7 @@ class TimeConverterTest extends TestCase
     public function hours_to_hours_string_with_seconds()
     {
         $output = (new TimeConverter())->setHours(7.19)->getHours();
-        $expected = "07:11:24";
+        $expected = '07:11:24';
 
         $this->assertIsString($output);
         $this->assertStringContainsString(':', $output);
@@ -100,7 +100,7 @@ class TimeConverterTest extends TestCase
     public function minutes_to_hours_string_with_seconds()
     {
         $output = (new TimeConverter())->setMinutes(135.5)->getHours();
-        $expected = "02:15:30";
+        $expected = '02:15:30';
 
         $this->assertIsString($output);
         $this->assertStringContainsString(':', $output);
@@ -111,19 +111,18 @@ class TimeConverterTest extends TestCase
     public function seconds_to_hours_string_with_seconds()
     {
         $output = (new TimeConverter())->setSeconds(11235)->getHours();
-        $expected = "03:07:15";
+        $expected = '03:07:15';
 
         $this->assertIsString($output);
         $this->assertStringContainsString(':', $output);
         $this->assertEquals($output, $expected);
     }
 
-
     /** @test */
     public function hours_to_hours_string_without_seconds()
     {
         $output = (new TimeConverter())->setHours(9.67)->getHours(false);
-        $expected = "09:40";
+        $expected = '09:40';
 
         $this->assertIsString($output);
         $this->assertStringContainsString(':', $output);
@@ -134,7 +133,7 @@ class TimeConverterTest extends TestCase
     public function minutes_to_hours_string_without_seconds()
     {
         $output = (new TimeConverter())->setMinutes(147.12)->getHours(false);
-        $expected = "02:27";
+        $expected = '02:27';
 
         $this->assertIsString($output);
         $this->assertStringContainsString(':', $output);
@@ -145,7 +144,7 @@ class TimeConverterTest extends TestCase
     public function seconds_to_hours_string_without_seconds()
     {
         $output = (new TimeConverter())->setSeconds(54213)->getHours(false);
-        $expected = "15:03";
+        $expected = '15:03';
 
         $this->assertIsString($output);
         $this->assertStringContainsString(':', $output);
