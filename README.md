@@ -19,17 +19,65 @@ composer require sfneal/time-helpers
 
 ## Usage
 
+### Carbonate
+Carbonate can be used to retrieve Carbon objects transformed from today's datetime.  This is useful for getting a Carbon
+object that represents a datetime in the past or future.
+
 ``` php
-// Usage description here
+use Sfneal\Helpers\Time\Carbonate;
+
+// Retrieve a Carbon\Carbon object representing '3' days ago
+$threeDaysAgo = Carbonate::daysAgo(3);
+$threeDaysAgo = Carbonate::days(-3);
+
+// Retrieve a Carbon\Carbon object representing '5' years ago
+$fiveYearsAgo = Carbonate::yearsAgo(3);
+$fiveYearsAgo = Carbonate::years(-3);
+
+// Retrieve a Carbon\Carbon object representing '6' months ago
+$sixMonthsAgo = Carbonate::monthsAgo(3);
+$sixMonthsAgo = Carbonate::months(-3);
 ```
 
-### Testing
+### TimeConverter
+TimeConverter is used to convert between different units of time (hours, minutes & seconds).  
+
+``` php
+use Sfneal\Helpers\Time\TimeConverter;
+
+// Convert Hours to Minutes
+$hours = 5.5;
+$minutes = (new TimeConverter())->setHours($hours)->minutes();
+>>> 19800
+
+
+// Convert Seconds to Hours
+$seconds = 37800;
+$hours = (new TimeConverter())->setSeconds($hours)->hours();
+>>> 10.5
+```
+
+
+### TimePeriod
+TimePeriod is used to retrieve a start & end datetime for a period of time (like today, last month, etc).  This can be
+useful when creating time scoped queries, like collecting all the orders from last month.
+
+``` php
+use Sfneal\Helpers\Time\TimePeriod;
+
+// Retrieve a TimePeriod representing today (02/16/2021)
+[$start, $end] = TimePeriods::today();
+// $start >>> 2021-02-16 00:00:00
+// $end >>> 2021-02-16 23:59:59
+```
+
+## Testing
 
 ``` bash
 composer test
 ```
 
-### Changelog
+## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
