@@ -72,3 +72,4 @@ All notable changes to `time-helpers` will be documented in this file
 ## 1.0.0 - 2021-02-16
 - initial production release
 - add basic usage instructions to the readme
+- optimize CarbonateTest by adding private performAssertions() methods
