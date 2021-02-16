@@ -62,3 +62,4 @@ All notable changes to `time-helpers` will be documented in this file
 - make Carbonate service for adding & subtracting days from a todays Carbon datetime
 - fix issue with TimeConverter::setMinutes() method not setting a $seconds property value
 - add TimeConvertTest to test suite for testing TimeConverter functionality
+- bump phpunit min dev requirement to 8.0 to support use of assertIs{Type} methods
