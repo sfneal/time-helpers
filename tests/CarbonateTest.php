@@ -42,7 +42,7 @@ class CarbonateTest extends TestCase
     }
 
     /**
-     * Perform the necessary assertions
+     * Perform the necessary assertions.
      *
      * @param Carbon $expected
      * @param Carbon $output
