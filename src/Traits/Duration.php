@@ -15,8 +15,6 @@ use Sfneal\Helpers\Time\TimeConverter;
  */
 trait Duration
 {
-    // todo: add tests
-
     /**
      * Retrieve the total duration in minutes with decimals.
      *
