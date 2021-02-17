@@ -6,6 +6,8 @@ use Sfneal\Actions\AbstractService;
 
 class TimeConverter extends AbstractService
 {
+    // todo: could $hours & $minutes be removed and convert everything from seconds?
+
     /**
      * @var float Number of hours
      */
@@ -102,7 +104,7 @@ class TimeConverter extends AbstractService
      * @param bool $include_seconds
      * @return string
      */
-    public function getHours(bool $include_seconds = true): string
+    public function getHours(bool $include_seconds = false): string
     {
         // Calculate remaining minutes
         $minutes = $this->minutes % 60;

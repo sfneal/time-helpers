@@ -70,6 +70,14 @@ All notable changes to `time-helpers` will be documented in this file
 
 
 ## 1.0.0 - 2021-02-16
-- initial production release
 - add basic usage instructions to the readme
 - optimize CarbonateTest by adding private performAssertions() methods
+- initial production release
+
+
+## 1.1.0 - 2021-02-17
+- fix issue with TimeConverter::getHours() unexpectedly including $seconds in the returned string
+- cut support for php7.2
+- add testing infrastructure for testing Duration trait by adding test model, migration & factory with test cases
+- bump dev requirement orchestra/testbench min version to 6.7 
+- add "illuminate/database": ">=8.2" to dev requirements to support Model Factories with custom namespaces

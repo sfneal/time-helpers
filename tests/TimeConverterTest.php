@@ -88,7 +88,7 @@ class TimeConverterTest extends TestCase
     /** @test */
     public function hours_to_hours_string_with_seconds()
     {
-        $output = (new TimeConverter())->setHours(7.19)->getHours();
+        $output = (new TimeConverter())->setHours(7.19)->getHours(true);
         $expected = '07:11:24';
 
         $this->assertIsString($output);
@@ -99,7 +99,7 @@ class TimeConverterTest extends TestCase
     /** @test */
     public function minutes_to_hours_string_with_seconds()
     {
-        $output = (new TimeConverter())->setMinutes(135.5)->getHours();
+        $output = (new TimeConverter())->setMinutes(135.5)->getHours(true);
         $expected = '02:15:30';
 
         $this->assertIsString($output);
@@ -110,7 +110,7 @@ class TimeConverterTest extends TestCase
     /** @test */
     public function seconds_to_hours_string_with_seconds()
     {
-        $output = (new TimeConverter())->setSeconds(11235)->getHours();
+        $output = (new TimeConverter())->setSeconds(11235)->getHours(true);
         $expected = '03:07:15';
 
         $this->assertIsString($output);
