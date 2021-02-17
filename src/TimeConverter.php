@@ -6,6 +6,8 @@ use Sfneal\Actions\AbstractService;
 
 class TimeConverter extends AbstractService
 {
+    // todo: could $hours & $minutes be removed and convert everything from seconds?
+
     /**
      * @var float Number of hours
      */
