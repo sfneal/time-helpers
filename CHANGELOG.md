@@ -70,6 +70,11 @@ All notable changes to `time-helpers` will be documented in this file
 
 
 ## 1.0.0 - 2021-02-16
-- initial production release
 - add basic usage instructions to the readme
 - optimize CarbonateTest by adding private performAssertions() methods
+- initial production release
+
+
+## 1.0.1 - 2021-02-17
+- fix issue with TimeConverter::getHours() unexpectedly including $seconds in the returned string
+- add testing infrastructure for testing Duration trait by adding test model, migration & factory with test cases
