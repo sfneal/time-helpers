@@ -65,6 +65,6 @@ trait Duration
      */
     public function getTotalTimeAttribute(): string
     {
-        return (new TimeConverter())->setSeconds($this->total_seconds)->getHours();
+        return (new TimeConverter())->setSeconds($this->total_seconds)->getHours(true);
     }
 }

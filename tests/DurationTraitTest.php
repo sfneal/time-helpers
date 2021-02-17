@@ -37,7 +37,7 @@ class DurationTraitTest extends TestCase
         $this->task->total_duration = 135.5;
 
         $this->assertIsString($this->task->total_hours);
-        $this->assertEquals("02:15:30", $this->task->total_hours);
+        $this->assertEquals("02:15", $this->task->total_hours);
     }
 
     /** @test */
@@ -60,6 +60,6 @@ class DurationTraitTest extends TestCase
         $this->task->total_duration = 145.75;
 
         $this->assertIsString($this->task->total_time);
-        $this->assertEquals("02:25:45", $this->task->total_hours);
+        $this->assertEquals("02:25:45", $this->task->total_time);
     }
 }
