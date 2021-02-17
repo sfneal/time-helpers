@@ -79,4 +79,5 @@ All notable changes to `time-helpers` will be documented in this file
 - fix issue with TimeConverter::getHours() unexpectedly including $seconds in the returned string
 - cut support for php7.2
 - add testing infrastructure for testing Duration trait by adding test model, migration & factory with test cases
-- bump dev requirement orchestra/testbench min version to 6.7
+- bump dev requirement orchestra/testbench min version to 6.7 
+- add "illuminate/database": ">=8.2" to dev requirements to support Model Factories with custom namespaces
