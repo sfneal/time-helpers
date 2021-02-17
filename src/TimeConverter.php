@@ -102,7 +102,7 @@ class TimeConverter extends AbstractService
      * @param bool $include_seconds
      * @return string
      */
-    public function getHours(bool $include_seconds = true): string
+    public function getHours(bool $include_seconds = false): string
     {
         // Calculate remaining minutes
         $minutes = $this->minutes % 60;
