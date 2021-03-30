@@ -23,7 +23,8 @@
     },
     "require-dev": {
         "illuminate/database": ">=8.2",
-        "orchestra/testbench": ">=6.7"
+        "orchestra/testbench": ">=6.7",
+        "scrutinizer/ocular": "^1.8"
     },
     "autoload": {
         "psr-4": {
@@ -38,6 +39,7 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "upload-coverage": "php vendor/bin/ocular code-coverage:upload --format=php-clover phpunit.xml.dist",
         "update-test": "composer --prefer-stable update && composer test && composer update --prefer-lowest && composer test && composer update"
     },
     "config": {
