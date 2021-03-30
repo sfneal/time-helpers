@@ -81,3 +81,8 @@ All notable changes to `time-helpers` will be documented in this file
 - add testing infrastructure for testing Duration trait by adding test model, migration & factory with test cases
 - bump dev requirement orchestra/testbench min version to 6.7 
 - add "illuminate/database": ">=8.2" to dev requirements to support Model Factories with custom namespaces
+
+
+## 1.1.1 - 2021-03-30
+- fix sfneal/actions, sfneal/array-helpers & spatie/laravel-analytics version syntax
+- fix Travis CI config to enable code coverage uploads
