@@ -17,8 +17,7 @@
     ],
     "require": {
         "php": ">=7.3",
-        "sfneal/actions": "^1.0",
-        "sfneal/array-helpers": "^1.0",
+        "sfneal/array-helpers": "^1.2",
         "spatie/laravel-analytics": "^3.10"
     },
     "require-dev": {

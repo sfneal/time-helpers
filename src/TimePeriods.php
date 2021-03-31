@@ -2,9 +2,7 @@
 
 namespace Sfneal\Helpers\Time;
 
-use Sfneal\Actions\AbstractService;
-
-class TimePeriods extends AbstractService
+class TimePeriods
 {
     /**
      * This Month.

@@ -2,9 +2,7 @@
 
 namespace Sfneal\Helpers\Time;
 
-use Sfneal\Actions\AbstractService;
-
-class TimeConverter extends AbstractService
+class TimeConverter
 {
     // todo: could $hours & $minutes be removed and convert everything from seconds?
 
