@@ -2,9 +2,9 @@
 
 namespace Sfneal\Helpers\Time;
 
-use Sfneal\Actions\AbstractService;
+use Sfneal\Helpers\Arrays\ArrayHelpers;
 
-class TimePeriods extends AbstractService
+class TimePeriods
 {
     /**
      * This Month.
@@ -160,13 +160,19 @@ class TimePeriods extends AbstractService
      */
     private static function mapMethods(array $methods): array
     {
-        return arrayFlattenKeys(array_map(function ($method, $times) {
-            return [$method => $times];
-        },
+        $array = array_map(
+            function ($method, $times) {
+                return [$method => $times];
+            },
             $methods,
-            array_map(function ($method) {
-                return self::{$method}();
-            }, $methods)
-        ), false);
+            array_map(
+                function ($method) {
+                    return self::{$method}();
+                },
+                $methods
+            )
+        );
+
+        return (new ArrayHelpers($array))->arrayFlattenKeys(false);
     }
 }

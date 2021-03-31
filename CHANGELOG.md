@@ -86,3 +86,8 @@ All notable changes to `time-helpers` will be documented in this file
 ## 1.1.1 - 2021-03-30
 - fix sfneal/actions, sfneal/array-helpers & spatie/laravel-analytics version syntax
 - fix Travis CI config to enable code coverage uploads
+
+
+## 1.2.0 - 2021-03-31
+- fix `TimePeriods::mapMethods()` to use `ArrayHelpers` import instead of helper function
+- cut use of `AbstractService` extension

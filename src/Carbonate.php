@@ -3,9 +3,8 @@
 namespace Sfneal\Helpers\Time;
 
 use Carbon\Carbon;
-use Sfneal\Actions\AbstractService;
 
-class Carbonate extends AbstractService
+class Carbonate
 {
     /**
      * Create a Carbon datetime objects $x days forward/backward in the past or future.
