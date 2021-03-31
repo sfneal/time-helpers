@@ -89,6 +89,5 @@ All notable changes to `time-helpers` will be documented in this file
 
 
 ## 1.2.0 - 2021-03-31
-- bump sfneal/array-helpers min version to 1.2
 - fix `TimePeriods::mapMethods()` to use `ArrayHelpers` import instead of helper function
 - cut use of `AbstractService` extension
