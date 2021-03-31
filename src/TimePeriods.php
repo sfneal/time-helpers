@@ -172,6 +172,7 @@ class TimePeriods
                 $methods
             )
         );
+
         return (new ArrayHelpers($array))->arrayFlattenKeys(false);
     }
 }
