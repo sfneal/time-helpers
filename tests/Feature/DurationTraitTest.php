@@ -1,8 +1,9 @@
 <?php
 
-namespace Sfneal\Helpers\Time\Tests;
+namespace Sfneal\Helpers\Time\Tests\Feature;
 
 use Sfneal\Helpers\Time\Tests\Assets\Models\Task;
+use Sfneal\Helpers\Time\Tests\TestCase;
 
 class DurationTraitTest extends TestCase
 {
