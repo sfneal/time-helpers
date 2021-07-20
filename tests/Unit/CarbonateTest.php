@@ -1,13 +1,18 @@
 <?php
 
-namespace Sfneal\Helpers\Time\Tests;
+namespace Sfneal\Helpers\Time\Tests\Unit;
 
 use Carbon\Carbon;
-use PHPUnit\Framework\TestCase;
 use Sfneal\Helpers\Time\Carbonate;
+use Sfneal\Helpers\Time\Tests\TestCase;
 
 class CarbonateTest extends TestCase
 {
+    /**
+     * @var bool
+     */
+    protected $seed = false;
+
     /**
      * @var int
      */
@@ -28,7 +33,7 @@ class CarbonateTest extends TestCase
      *
      * @return void
      */
-    protected function setUp(): void
+    public function setUp(): void
     {
         parent::setUp();
 

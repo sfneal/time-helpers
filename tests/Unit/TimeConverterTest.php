@@ -1,12 +1,17 @@
 <?php
 
-namespace Sfneal\Helpers\Time\Tests;
+namespace Sfneal\Helpers\Time\Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use Sfneal\Helpers\Time\Tests\TestCase;
 use Sfneal\Helpers\Time\TimeConverter;
 
 class TimeConverterTest extends TestCase
 {
+    /**
+     * @var bool
+     */
+    protected $seed = false;
+
     /**
      * @var float
      */
@@ -17,7 +22,7 @@ class TimeConverterTest extends TestCase
      *
      * @return void
      */
-    protected function setUp(): void
+    public function setUp(): void
     {
         parent::setUp();
 

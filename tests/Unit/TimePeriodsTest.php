@@ -1,12 +1,17 @@
 <?php
 
-namespace Sfneal\Helpers\Time\Tests;
+namespace Sfneal\Helpers\Time\Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use Sfneal\Helpers\Time\Tests\TestCase;
 use Sfneal\Helpers\Time\TimePeriods;
 
 class TimePeriodsTest extends TestCase
 {
+    /**
+     * @var bool
+     */
+    protected $seed = false;
+
     /** @test */
     public function thisMonth()
     {

@@ -1,14 +1,19 @@
 <?php
 
-namespace Sfneal\Helpers\Time\Tests;
+namespace Sfneal\Helpers\Time\Tests\Unit;
 
 use Carbon\Carbon;
-use PHPUnit\Framework\TestCase;
 use Sfneal\Helpers\Time\Period;
+use Sfneal\Helpers\Time\Tests\TestCase;
 use Spatie\Analytics\Exceptions\InvalidPeriod;
 
 class PeriodTest extends TestCase
 {
+    /**
+     * @var bool
+     */
+    protected $seed = false;
+
     /** @test */
     public function it_can_create_a_period_for_a_given_amount_of_days()
     {
