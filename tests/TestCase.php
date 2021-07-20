@@ -46,7 +46,7 @@ class TestCase extends OrchestraTestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        include_once __DIR__ . '/Assets/migrations/create_task_table.php.stub';
+        include_once __DIR__.'/Assets/migrations/create_task_table.php.stub';
 
         (new \CreateTaskTable())->up();
     }
