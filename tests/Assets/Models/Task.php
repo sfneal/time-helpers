@@ -1,10 +1,10 @@
 <?php
 
-namespace Sfneal\Helpers\Time\Tests\Models;
+namespace Sfneal\Helpers\Time\Tests\Assets\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Sfneal\Helpers\Time\Tests\Factories\TaskFactory;
+use Sfneal\Helpers\Time\Tests\Assets\Factories\TaskFactory;
 use Sfneal\Helpers\Time\Traits\Duration;
 
 class Task extends Model

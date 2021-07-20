@@ -1,9 +1,9 @@
 <?php
 
-namespace Sfneal\Helpers\Time\Tests\Factories;
+namespace Sfneal\Helpers\Time\Tests\Assets\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Sfneal\Helpers\Time\Tests\Models\Task;
+use Sfneal\Helpers\Time\Tests\Assets\Models\Task;
 
 class TaskFactory extends Factory
 {
