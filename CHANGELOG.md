@@ -91,3 +91,9 @@ All notable changes to `time-helpers` will be documented in this file
 ## 1.2.0 - 2021-03-31
 - fix `TimePeriods::mapMethods()` to use `ArrayHelpers` import instead of helper function
 - cut use of `AbstractService` extension
+
+
+## 1.2.1 - 2021-07-20
+- refactor test classes into `Unit` & `Feature` namespaces
+- make 'tests/Assets/Seeders' directory for populating test database
+- refactor test suite assets to 'tests/Assets' directory
