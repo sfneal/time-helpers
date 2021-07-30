@@ -20,8 +20,8 @@ class TimePeriodsTest extends TestCase
         $targetStart = date('Y-m-d', strtotime('first day of this month')).' 00:00:00';
         $targetEnd = date('Y-m-d', strtotime('last day of this month')).' 23:59:59';
 
-        $this->assertTrue($start == $targetStart);
-        $this->assertTrue($end == $targetEnd);
+        $this->assertEquals($targetStart, $start);
+        $this->assertEquals($targetEnd, $end);
     }
 
     /** @test */
@@ -32,8 +32,8 @@ class TimePeriodsTest extends TestCase
         $targetStart = date('Y-m-d', strtotime('first day of last month')).' 00:00:00';
         $targetEnd = date('Y-m-d', strtotime('last day of last month')).' 23:59:59';
 
-        $this->assertTrue($start == $targetStart);
-        $this->assertTrue($end == $targetEnd);
+        $this->assertEquals($targetStart, $start);
+        $this->assertEquals($targetEnd, $end);
     }
 
     /** @test */
@@ -44,8 +44,8 @@ class TimePeriodsTest extends TestCase
         $targetStart = date('Y-m-d', strtotime('Monday this week')).' 00:00:00';
         $targetEnd = date('Y-m-d', strtotime('Sunday this week')).' 23:59:59';
 
-        $this->assertTrue($start == $targetStart);
-        $this->assertTrue($end == $targetEnd);
+        $this->assertEquals($targetStart, $start);
+        $this->assertEquals($targetEnd, $end);
     }
 
     /** @test */
@@ -56,8 +56,8 @@ class TimePeriodsTest extends TestCase
         $targetStart = date('Y-m-d', strtotime('Today')).' 00:00:00';
         $targetEnd = date('Y-m-d', strtotime('Today')).' 23:59:59';
 
-        $this->assertTrue($start == $targetStart);
-        $this->assertTrue($end == $targetEnd);
+        $this->assertEquals($targetStart, $start);
+        $this->assertEquals($targetEnd, $end);
     }
 
     /** @test */
@@ -68,8 +68,8 @@ class TimePeriodsTest extends TestCase
         $targetStart = date('Y-m-d', strtotime('Yesterday')).' 00:00:00';
         $targetEnd = date('Y-m-d', strtotime('Yesterday')).' 23:59:59';
 
-        $this->assertTrue($start == $targetStart);
-        $this->assertTrue($end == $targetEnd);
+        $this->assertEquals($targetStart, $start);
+        $this->assertEquals($targetEnd, $end);
     }
 
     /** @test */
@@ -80,7 +80,7 @@ class TimePeriodsTest extends TestCase
         $targetStart = date('Y-m-d', strtotime('Tomorrow')).' 00:00:00';
         $targetEnd = date('Y-m-d', strtotime('Tomorrow')).' 23:59:59';
 
-        $this->assertTrue($start == $targetStart);
-        $this->assertTrue($end == $targetEnd);
+        $this->assertEquals($targetStart, $start);
+        $this->assertEquals($targetEnd, $end);
     }
 }
