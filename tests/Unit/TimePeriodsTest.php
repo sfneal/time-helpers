@@ -93,7 +93,6 @@ class TimePeriodsTest extends TestCase
         }
     }
 
-
     /**
      * Assert the $start & $end datetime strings make up a 'ThisMonth' time period.
      *
