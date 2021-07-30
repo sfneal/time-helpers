@@ -71,6 +71,17 @@ class TimePeriodsTest extends TestCase
         }
     }
 
+    /** @test */
+    public function all_time_periods()
+    {
+        $periods = TimePeriods::all();
+
+        foreach ($periods as $title => $period) {
+            [$start, $end] = $period;
+            $this->{"assert{$title}"}($start, $end);
+        }
+    }
+
 
     /**
      * Assert the $start & $end datetime strings make up a 'ThisMonth' time period.
