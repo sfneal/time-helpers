@@ -97,3 +97,8 @@ All notable changes to `time-helpers` will be documented in this file
 - refactor test classes into `Unit` & `Feature` namespaces
 - make 'tests/Assets/Seeders' directory for populating test database
 - refactor test suite assets to 'tests/Assets' directory
+
+
+## 1.2.2 - 2021-07-30
+- optimize assertions methods used in `TimePeriodTest`
+- add test methods for testing all of `TimePeriods` public methods
