@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Sfneal\Helpers\Time\Tests\Assets\Seeders;
 
 use Illuminate\Database\Seeder;
