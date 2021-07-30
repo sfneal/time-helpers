@@ -17,11 +17,7 @@ class TimePeriodsTest extends TestCase
     {
         [$start, $end] = TimePeriods::thisMonth();
 
-        $targetStart = date('Y-m-d', strtotime('first day of this month')).' 00:00:00';
-        $targetEnd = date('Y-m-d', strtotime('last day of this month')).' 23:59:59';
-
-        $this->assertTrue($start == $targetStart);
-        $this->assertTrue($end == $targetEnd);
+        $this->assertThisMonth($start, $end);
     }
 
     /** @test */
@@ -29,11 +25,7 @@ class TimePeriodsTest extends TestCase
     {
         [$start, $end] = TimePeriods::lastMonth();
 
-        $targetStart = date('Y-m-d', strtotime('first day of last month')).' 00:00:00';
-        $targetEnd = date('Y-m-d', strtotime('last day of last month')).' 23:59:59';
-
-        $this->assertTrue($start == $targetStart);
-        $this->assertTrue($end == $targetEnd);
+        $this->assertLastMonth($start, $end);
     }
 
     /** @test */
@@ -41,11 +33,7 @@ class TimePeriodsTest extends TestCase
     {
         [$start, $end] = TimePeriods::thisWeek();
 
-        $targetStart = date('Y-m-d', strtotime('Monday this week')).' 00:00:00';
-        $targetEnd = date('Y-m-d', strtotime('Sunday this week')).' 23:59:59';
-
-        $this->assertTrue($start == $targetStart);
-        $this->assertTrue($end == $targetEnd);
+        $this->assertThisWeek($start, $end);
     }
 
     /** @test */
@@ -53,11 +41,7 @@ class TimePeriodsTest extends TestCase
     {
         [$start, $end] = TimePeriods::today();
 
-        $targetStart = date('Y-m-d', strtotime('Today')).' 00:00:00';
-        $targetEnd = date('Y-m-d', strtotime('Today')).' 23:59:59';
-
-        $this->assertTrue($start == $targetStart);
-        $this->assertTrue($end == $targetEnd);
+        $this->assertToday($start, $end);
     }
 
     /** @test */
@@ -65,11 +49,7 @@ class TimePeriodsTest extends TestCase
     {
         [$start, $end] = TimePeriods::yesterday();
 
-        $targetStart = date('Y-m-d', strtotime('Yesterday')).' 00:00:00';
-        $targetEnd = date('Y-m-d', strtotime('Yesterday')).' 23:59:59';
-
-        $this->assertTrue($start == $targetStart);
-        $this->assertTrue($end == $targetEnd);
+        $this->assertYesterday($start, $end);
     }
 
     /** @test */
@@ -77,10 +57,153 @@ class TimePeriodsTest extends TestCase
     {
         [$start, $end] = TimePeriods::tomorrow();
 
+        $this->assertTomorrow($start, $end);
+    }
+
+    /** @test */
+    public function get_time_periods()
+    {
+        $periods = TimePeriods::get('today', 'yesterday', 'tomorrow', 'thisWeek', 'thisMonth', 'lastMonth');
+
+        foreach ($periods as $title => $period) {
+            [$start, $end] = $period;
+            $this->{"assert{$title}"}($start, $end);
+        }
+    }
+
+    /** @test */
+    public function all_time_periods()
+    {
+        $periods = TimePeriods::all();
+
+        foreach ($periods as $title => $period) {
+            [$start, $end] = $period;
+            $this->{"assert{$title}"}($start, $end);
+        }
+    }
+
+    /** @test */
+    public function timePeriod()
+    {
+        $periods = ['today', 'yesterday', 'tomorrow', 'thisWeek', 'thisMonth', 'lastMonth'];
+
+        foreach ($periods as $period) {
+            [$start, $end] = TimePeriods::timePeriod($period);
+            $this->{"assert{$period}"}($start, $end);
+        }
+    }
+
+    /**
+     * Assert the $start & $end datetime strings make up a 'ThisMonth' time period.
+     *
+     * @param $start
+     * @param $end
+     */
+    public function assertThisMonth($start, $end)
+    {
+        $targetStart = date('Y-m-d', strtotime('first day of this month')).' 00:00:00';
+        $targetEnd = date('Y-m-d', strtotime('last day of this month')).' 23:59:59';
+
+        $this->assertNotNull($start);
+        $this->assertNotNull($end);
+        $this->assertIsString($start);
+        $this->assertIsString($end);
+        $this->assertEquals($targetStart, $start);
+        $this->assertEquals($targetEnd, $end);
+    }
+
+    /**
+     * Assert the $start & $end datetime strings make up a 'LastMonth' time period.
+     *
+     * @param $start
+     * @param $end
+     */
+    public function assertLastMonth($start, $end)
+    {
+        $targetStart = date('Y-m-d', strtotime('first day of last month')).' 00:00:00';
+        $targetEnd = date('Y-m-d', strtotime('last day of last month')).' 23:59:59';
+
+        $this->assertNotNull($start);
+        $this->assertNotNull($end);
+        $this->assertIsString($start);
+        $this->assertIsString($end);
+        $this->assertEquals($targetStart, $start);
+        $this->assertEquals($targetEnd, $end);
+    }
+
+    /**
+     * Assert the $start & $end datetime strings make up a 'ThisWeek' time period.
+     *
+     * @param $start
+     * @param $end
+     */
+    public function assertThisWeek($start, $end)
+    {
+        $targetStart = date('Y-m-d', strtotime('Monday this week')).' 00:00:00';
+        $targetEnd = date('Y-m-d', strtotime('Sunday this week')).' 23:59:59';
+
+        $this->assertNotNull($start);
+        $this->assertNotNull($end);
+        $this->assertIsString($start);
+        $this->assertIsString($end);
+        $this->assertEquals($targetStart, $start);
+        $this->assertEquals($targetEnd, $end);
+    }
+
+    /**
+     * Assert the $start & $end datetime strings make up a 'Today' time period.
+     *
+     * @param $start
+     * @param $end
+     */
+    public function assertToday($start, $end)
+    {
+        $targetStart = date('Y-m-d', strtotime('Today')).' 00:00:00';
+        $targetEnd = date('Y-m-d', strtotime('Today')).' 23:59:59';
+
+        $this->assertNotNull($start);
+        $this->assertNotNull($end);
+        $this->assertIsString($start);
+        $this->assertIsString($end);
+        $this->assertEquals($targetStart, $start);
+        $this->assertEquals($targetEnd, $end);
+    }
+
+    /**
+     * Assert the $start & $end datetime strings make up a 'Yesterday' time period.
+     *
+     * @param $start
+     * @param $end
+     */
+    public function assertYesterday($start, $end)
+    {
+        $targetStart = date('Y-m-d', strtotime('Yesterday')).' 00:00:00';
+        $targetEnd = date('Y-m-d', strtotime('Yesterday')).' 23:59:59';
+
+        $this->assertNotNull($start);
+        $this->assertNotNull($end);
+        $this->assertIsString($start);
+        $this->assertIsString($end);
+        $this->assertEquals($targetStart, $start);
+        $this->assertEquals($targetEnd, $end);
+    }
+
+    /**
+     * Assert the $start & $end datetime strings make up a 'Tomorrow' time period.
+     *
+     * @param $start
+     * @param $end
+     */
+    public function assertTomorrow($start, $end)
+    {
         $targetStart = date('Y-m-d', strtotime('Tomorrow')).' 00:00:00';
         $targetEnd = date('Y-m-d', strtotime('Tomorrow')).' 23:59:59';
 
-        $this->assertTrue($start == $targetStart);
-        $this->assertTrue($end == $targetEnd);
+        $this->assertNotNull($start);
+        $this->assertNotNull($end);
+        $this->assertIsString($start);
+        $this->assertIsString($end);
+        $this->assertEquals($targetStart, $start);
+        $this->assertEquals($targetEnd, $end);
     }
 }

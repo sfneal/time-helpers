@@ -93,7 +93,7 @@ class TimePeriods
     /**
      * Names of helper methods that don't return time periods.
      */
-    const HELPER_METHODS = ['all', 'get', 'getPeriod', 'mapMethods'];
+    private const HELPER_METHODS = ['all', 'get', 'getPeriod', 'mapMethods', 'timePeriod'];
 
     /**
      * Retrieve an array time period names and time period ranges.
@@ -103,7 +103,7 @@ class TimePeriods
      */
     public static function all(array $exclusions = []): array
     {
-        // Get all of the methods in this class except 'all' & 'getPeriod'
+        // Get all the methods in this class except 'all' & 'getPeriod'
         $methods = array_filter(get_class_methods(new self()), function ($method) use ($exclusions) {
             return ! in_array($method, array_unique(array_merge(self::HELPER_METHODS, $exclusions)));
         });
@@ -120,7 +120,7 @@ class TimePeriods
      */
     public static function get(...$inclusions): array
     {
-        // Get all of the methods in this class except 'all' & 'getPeriod'
+        // Get all the methods in this class except 'all' & 'getPeriod'
         $methods = array_filter(get_class_methods(new self()), function ($method) use ($inclusions) {
             return in_array($method, $inclusions);
         });
