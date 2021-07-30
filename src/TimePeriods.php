@@ -162,6 +162,7 @@ class TimePeriods
         foreach ($methods as $method) {
             $arr[$method] = self::{$method}();
         }
+
         return $arr;
     }
 }
