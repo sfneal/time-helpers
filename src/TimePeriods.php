@@ -2,8 +2,6 @@
 
 namespace Sfneal\Helpers\Time;
 
-use Sfneal\Helpers\Arrays\ArrayHelpers;
-
 class TimePeriods
 {
     /**
@@ -160,19 +158,10 @@ class TimePeriods
      */
     private static function mapMethods(array $methods): array
     {
-        $array = array_map(
-            function ($method, $times) {
-                return [$method => $times];
-            },
-            $methods,
-            array_map(
-                function ($method) {
-                    return self::{$method}();
-                },
-                $methods
-            )
-        );
-
-        return (new ArrayHelpers($array))->arrayFlattenKeys(false);
+        $arr = [];
+        foreach ($methods as $method) {
+            $arr[$method] = self::{$method}();
+        }
+        return $arr;
     }
 }
