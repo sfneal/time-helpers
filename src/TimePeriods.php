@@ -93,7 +93,7 @@ class TimePeriods
     /**
      * Names of helper methods that don't return time periods.
      */
-    const HELPER_METHODS = ['all', 'get', 'getPeriod', 'mapMethods', 'timePeriod'];
+    private const HELPER_METHODS = ['all', 'get', 'getPeriod', 'mapMethods', 'timePeriod'];
 
     /**
      * Retrieve an array time period names and time period ranges.
